@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { DataGrid, GridColDef, GridDataContainer, GridValueGetterParams } from '@material-ui/data-grid';
 import { server_calls } from '../../api';
 import { useGetData } from '../../custom-hooks';
+import DeleteIcon from '@material-ui/icons/Delete';
 import { Button,Dialog,
   DialogActions,
   DialogContent,
@@ -57,7 +58,7 @@ export const DataTable = () => {
             {/* pageSize={5} is the number of rows of data displayed (it shows 5 rows out of 9 and can page over to next 4 rows) */}
             <DataGrid rows = {characterData} columns = {columns} pageSize={5} checkboxSelection onRowSelected = { setData } />
             <Button onClick={handleOpen}>Update</Button>
-            <Button variant="contained" color="secondary" onClick={deleteData}>Delete</Button>
+            <Button variant="contained" color="secondary" startIcon={<DeleteIcon/>} onClick={deleteData}>Delete</Button>
 
             {/* Dialog Pop Up Begin */}
             <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">

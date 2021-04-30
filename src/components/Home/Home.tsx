@@ -1,12 +1,17 @@
 import React from 'react';
+
+// New Styles Import for Material-UI (for styling)
 import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import marvel_image from '../../assets/images/marvel-logo.jpeg';
+import marvel_image from '../../assets/images/marvel_logo_final.png';
+
 import { Link } from 'react-router-dom';
 import { AuthCheck } from 'reactfire';
 
-
-interface Props{
+// interface Props could be History, location, node, etc. - technically, whatever we need it to be
+// No matter what we add here, it's always expecting these props (properties)
+// i.e. every page should look like this
+interface Props {
     title: string;
 }
 
@@ -15,7 +20,9 @@ interface Props{
 const useStyles = makeStyles({
     root:{
         padding: '0',
-        margin: '0'
+        margin: '0',
+        color: 'white',
+        backgroundColor: 'black',
     },
     navbar_container: {
         display: 'flex',
@@ -26,7 +33,7 @@ const useStyles = makeStyles({
         margin: '0 0 0 0.45em'
     },
     logo_a: {
-        color: 'rgb(28,24,22)'
+        color: 'white'
     },
     logo_navigation: {
         listStyle: 'none',
@@ -39,12 +46,13 @@ const useStyles = makeStyles({
     nav_a: {
         display: 'block',
         padding: '1em',
-        color: 'black'
+        color: 'white'
     },
 
     // formatted string
     main: {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)), url(${marvel_image})`,
+        backgroundImage: `url(${marvel_image})`,
+        backgroundColor: 'black',
         width: '100%',
         height: '100%',
         backgroundSize: 'cover',
@@ -55,10 +63,10 @@ const useStyles = makeStyles({
     main_text: {
         textAlign: 'center',
         position: 'relative',
-        top: '50%',
+        top: '75%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        color: 'white'
+        color: 'white',
     }
 })
 
@@ -91,9 +99,6 @@ export const Home = ( props:Props ) => {
                         <li>
                             <Link to ="/dashboard" className={classes.nav_a}>Dashboard</Link>
                         </li>
-                        <li>
-                            <Link to="/signin" className={classes.nav_a}>Sign In</Link>
-                        </li>
 
                         <li>
                             <Link to="/signin" className={classes.nav_a}>Sign Out</Link>
@@ -108,12 +113,14 @@ export const Home = ( props:Props ) => {
             <main className={classes.main}>
                 <div className = {classes.main_text}>
                     <h1> {props.title} </h1>
-                    <p>I Like Marvel!!</p>
+                    {/* <p>I Like Marvel!!</p> */}
                     <Link to = '/signin'>
-                    <Button color = 'primary' variant = 'contained'>Sign In</Button>
+                    <Button color = 'secondary' variant = 'contained'>Sign In</Button>
                     </Link>
-                </div>
+                </div>    
+                
             </main>
+
         </div>
     )
 }

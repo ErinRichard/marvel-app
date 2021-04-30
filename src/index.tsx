@@ -20,7 +20,7 @@ ReactDOM.render(
       <Switch>
 
         <Route exact path='/'>
-          <Home title={'Rangers 59 Marvel Inventory'}/>
+          <Home title={'Rangers 59 Marvel Inventory Management'}/>
         </Route>
 
         <Route path='/dashboard'>

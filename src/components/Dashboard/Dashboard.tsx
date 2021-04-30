@@ -192,8 +192,8 @@ export const Dashboard = withRouter( (props:DashProps) => {
                             <CharacterForm />
                         </DialogContent>
                         <DialogActions>
-                        <Button onClick = {handleDialogClickClose} color="primary">Cancel</Button>
-                        <Button onClick={handleDialogClickClose} color = "primary">Done</Button> 
+                        <Button onClick = {handleDialogClickClose} color="secondary">Cancel</Button>
+                        <Button onClick={handleDialogClickClose} color = "primary">Save</Button> 
                         </DialogActions>
 
                         </Dialog>

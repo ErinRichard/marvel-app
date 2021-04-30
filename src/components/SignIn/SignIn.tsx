@@ -11,7 +11,7 @@ import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 // Functional component created inside of this component 
 // will only be used to close snackbar
 const Alert = (props:AlertProps) => {
-    return<MuiAlert elevation={6} variant="filled" {...props} />
+    return<MuiAlert elevation={3} variant="filled" {...props} />
 }
 
 const useStyles = makeStyles({
@@ -106,7 +106,7 @@ export const SignIn = withRouter( (props:SignInProps) => {
                         <label htmlFor="password">Passsword</label>
                         <Input name="password" placeholder="Place Passsword Here" />
                     </div>
-                    <Button type='submit' variant='contained' color='primary'>Submit</Button>
+                    <Button type='submit' variant='contained' color='secondary'>Submit</Button>
                 </form>
 
                 <AuthCheck fallback={
@@ -117,7 +117,7 @@ export const SignIn = withRouter( (props:SignInProps) => {
 
                 <Snackbar message={'Success'} open={open} autoHideDuration={6000} onClose={handleSnackClose}>
                 <Alert onClose={handleSnackClose} severity="success">
-                    Successful Sign In - Redirect in 6 secs
+                    Successful Sign In - Redirect in 3 secs
                 </Alert>
                 </Snackbar>
 
