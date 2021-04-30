@@ -68,8 +68,8 @@ export const DataTable = () => {
                   <CharacterForm id={gridData.data.id!}/>
               </DialogContent>
               <DialogActions>
-                <Button onClick = {handleClose} color="primary">Cancel</Button>
-                <Button onClick = {handleClose} color="primary">Done</Button>
+                <Button onClick = {handleClose} color="secondary">Cancel</Button>
+                <Button onClick = {handleClose} color="primary">Save</Button>
               </DialogActions>
             </Dialog>
 
